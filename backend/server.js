@@ -13,18 +13,23 @@ const supabase = createClient(
 );
 
 app.post("/contact", async (req, res) => {
+  console.log("ENV URL:", process.env.SUPABASE_URL);
+  console.log("ENV KEY:", process.env.SUPABASE_KEY ? "Loaded" : "Missing");
+
   const { name, email, message } = req.body;
+  console.log("DATA:", name, email, message);
 
   const { data, error } = await supabase
     .from("contacts")
     .insert([{ name, email, message }]);
 
   if (error) {
-    console.log(error);
-    return res.status(500).send("Error saving data");
+    console.log("SUPABASE ERROR:", error);
+    return res.status(500).send("DB Error ❌");
   }
 
-  res.send("Message saved successfully ✅");
+  console.log("SUCCESS:", data);
+  res.send("Saved ✅");
 });
 app.listen(5000, () => console.log("Server running on port 5000"));
 
