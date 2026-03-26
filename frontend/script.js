@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
   console.log(data); // debug
 
   try {
-    await fetch("http://localhost:5000/contact", {
+    await fetch("https://namratha-backend.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
