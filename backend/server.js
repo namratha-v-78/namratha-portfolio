@@ -8,8 +8,8 @@ app.use(express.json());
 const { createClient } = require("@supabase/supabase-js");
 
 const supabase = createClient(
-  "https://vnfpmtaunwbeyvhrwvyl.supabase.co",
-  "sb_publishable_E1F74RWWgJFqu4zQb-FX-A_R82Z7t_d"
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
 );
 
 app.post("/contact", async (req, res) => {
