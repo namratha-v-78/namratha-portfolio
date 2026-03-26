@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Namratha V | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 🌟 NAVBAR -->
+  <nav>
+    <h2>Namratha V</h2>
+    <ul>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🚀 HERO -->
+  <section class="hero">
+    <h1>Hello, I'm <span>Namratha V</span></h1>
+    <p>Web Developer | Cybersecurity Enthusiast</p>
+    <button onclick="scrollToSection('contact')">Hire Me</button>
+  </section>
+
+  <!-- 💻 SKILLS -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">Node.js</div>
+      <div class="card">MongoDB</div>
+    </div>
+  </section>
+
+  <!-- 📁 PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-container">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Full stack portfolio with backend and database.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Security Tool</h3>
+        <p>Basic cybersecurity project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📩 CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+
+    <form id="form">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="message" placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
