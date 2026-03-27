@@ -1,14 +1,24 @@
-document.getElementById("form").addEventListener("submit", async function(e) {
+// Scroll function
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// Contact form
+const form = document.getElementById("form");
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-  };
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const data = { name, email, message };
 
   try {
-    const res = await fetch("http://localhost:5000/contact", {
+    await fetch("https://namratha-backend.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -16,14 +26,25 @@ document.getElementById("form").addEventListener("submit", async function(e) {
       body: JSON.stringify(data)
     });
 
-    const result = await res.text();
-
     document.getElementById("msg").innerText =
-      "Thank you " + data.name + "! Your message has been sent.";
+      "Thank you " + name + "! Your message has been sent.";
 
-    document.getElementById("form").reset();
+    form.reset();
 
-  } catch (err) {
-    alert("Error sending message");
+  } catch {
+    alert("Error ❌");
   }
+});
+
+// Scroll animation
+const elements = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+
+    if (position < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
 });
