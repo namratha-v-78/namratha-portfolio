@@ -32,7 +32,7 @@ app.post("/contact", async (req, res) => {
       service: "gmail",
       auth: {
         user: "namrathav78@gmail.com",
-        pass: "dcrodmkbsyhonjcz"
+        pass: process.env.EMAIL_PASS
       }
     });
 
@@ -50,7 +50,11 @@ app.post("/contact", async (req, res) => {
   res.send("Saved + Email Sent ✅");
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
 
 app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
