@@ -8,7 +8,7 @@
 
 <body>
 
-  <!-- 🌟 NAVBAR -->
+  <!-- NAVBAR -->
   <nav>
     <h2>Namratha V</h2>
     <ul>
@@ -18,14 +18,14 @@
     </ul>
   </nav>
 
-  <!-- 🚀 HERO -->
+  <!-- HERO -->
   <section class="hero">
     <h1>Hello, I'm <span>Namratha V</span></h1>
     <p>Web Developer | Cybersecurity Enthusiast</p>
-    <button onclick="scrollToSection('contact')">Hire Me</button>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Hire Me</button>
   </section>
 
-  <!-- 💻 SKILLS -->
+  <!-- SKILLS -->
   <section id="skills" class="skills">
     <h2>Skills</h2>
     <div class="skills-container">
@@ -37,7 +37,7 @@
     </div>
   </section>
 
-  <!-- 📁 PROJECTS -->
+  <!-- PROJECTS -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
 
@@ -54,7 +54,7 @@
     </div>
   </section>
 
-  <!-- 📩 CONTACT -->
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
 
@@ -64,6 +64,8 @@
       <textarea id="message" placeholder="Message"></textarea>
       <button type="submit">Send Message</button>
     </form>
+
+    <p id="msg" style="color:green;"></p>
   </section>
 
   <script src="script.js"></script>
